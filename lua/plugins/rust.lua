@@ -10,7 +10,6 @@ return {
                 enable = true,
                 ignored = {
                   ["napi-derive"] = { "napi" },
-                  ["async-recursion"] = { "async_recursion" },
                 },
               },
             },
