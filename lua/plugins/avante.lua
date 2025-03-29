@@ -19,6 +19,7 @@ return {
       "ibhagwan/fzf-lua",
       "nvim-tree/nvim-web-devicons",
       "zbirenbaum/copilot.lua",
+      "ravitemer/mcphub.nvim",
       {
         "HakonHarnes/img-clip.nvim",
         event = "VeryLazy",
@@ -122,6 +123,16 @@ return {
       hints = {
         enabled = true,
       },
+      system_prompt = function()
+        local hub = require("mcphub").get_hub_instance()
+        return hub:get_active_servers_prompt()
+      end,
+      -- The custom_tools type supports both a list and a function that returns a list. Using a function here prevents requiring mcphub before it's loaded
+      custom_tools = function()
+        return {
+          require("mcphub.extensions.avante").mcp_tool(),
+        }
+      end,
     },
     build = "make",
   },
