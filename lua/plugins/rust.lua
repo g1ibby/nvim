@@ -12,6 +12,10 @@ return {
                   ["napi-derive"] = { "napi" },
                 },
               },
+              -- Use the rust-analyzer component directly
+              server = {
+                path = "rust-analyzer",
+              },
             },
           },
         },
