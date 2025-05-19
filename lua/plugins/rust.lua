@@ -12,6 +12,10 @@ return {
                   ["napi-derive"] = { "napi" },
                 },
               },
+              -- Add cargo features configuration here
+              cargo = {
+                features = { "integration-tests" },
+              },
               -- Use the rust-analyzer component directly
               server = {
                 path = "rust-analyzer",
